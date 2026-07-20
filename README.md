@@ -24,7 +24,7 @@ Proyecto académico construido con la misma organización general del proyecto b
 
 - Visual Studio 2022 con soporte para ASP.NET y desarrollo web.
 - .NET 9 SDK.
-- SQL Server Developer/Express disponible en `MARIODEVIT`.
+- SQL Server Developer/Express.
 
 ## Crear la base de datos local
 
