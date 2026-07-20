@@ -1,0 +1,27 @@
+@model TipoMembresia
+
+@{
+    ViewData["Title"] = "Editar plan";
+}
+
+<div class="card shadow-sm">
+    <div class="card-header">
+        <h2 class="h4 mb-0">Editar plan de membresía</h2>
+    </div>
+    <div class="card-body">
+        <form asp-action="Edit" method="post">
+            <input type="hidden" asp-for="TipoMembresiaId" />
+            <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+            <partial name="_Form" model="Model" />
+
+            <div class="mt-4">
+                <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                <a asp-action="Index" class="btn btn-outline-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,6 @@
+@model Entrenador
+@{ ViewData["Title"] = "Eliminar entrenador"; }
+<div class="card shadow-sm border-danger"><div class="card-header"><h2 class="h4 mb-0 text-danger">Eliminar entrenador</h2></div><div class="card-body">
+<p>¿Está seguro de eliminar a <strong>@Model.NombreCompleto</strong>?</p><p class="text-muted">No podrá eliminarse si tiene clientes asignados.</p>
+<form asp-action="Delete" method="post"><input type="hidden" asp-for="EntrenadorId" /><button type="submit" class="btn btn-danger">Eliminar</button> <a asp-action="Index" class="btn btn-outline-secondary">Cancelar</a></form>
+</div></div>

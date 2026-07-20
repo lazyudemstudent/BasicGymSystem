@@ -1,0 +1,76 @@
+@model Dashboard_VM?
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="hero-panel mb-4">
+    <div>
+        <p class="text-uppercase small fw-semibold mb-2">Sistema administrativo</p>
+        <h1 class="display-6 fw-bold mb-2">Gestión del gimnasio</h1>
+        <p class="mb-0">Administre clientes, entrenadores, membresías, pagos y asistencias desde un solo lugar.</p>
+    </div>
+</div>
+
+@if (User.Identity?.IsAuthenticated == true && Model is not null)
+{
+    <div class="row g-3 mb-4">
+        <div class="col-md-6 col-xl-3">
+            <div class="summary-card">
+                <span>Total de clientes</span>
+                <strong>@Model.TotalClientes</strong>
+            </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+            <div class="summary-card">
+                <span>Clientes activos</span>
+                <strong>@Model.ClientesActivos</strong>
+            </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+            <div class="summary-card">
+                <span>Membresías activas</span>
+                <strong>@Model.MembresiasActivas</strong>
+            </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+            <div class="summary-card">
+                <span>Asistencias de hoy</span>
+                <strong>@Model.AsistenciasHoy</strong>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-3">
+        <div class="col-md-6">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5>Entrenadores activos</h5>
+                    <p class="display-6 fw-semibold">@Model.EntrenadoresActivos</p>
+                    <a asp-controller="Entrenadores" asp-action="Index" class="btn btn-outline-primary">Administrar entrenadores</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5>Pagos del mes</h5>
+                    <p class="display-6 fw-semibold">@Model.PagosMes.ToString("C2")</p>
+                    <a asp-controller="Pagos" asp-action="Index" class="btn btn-outline-primary">Ver pagos</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="card shadow-sm border-0 login-required-card">
+        <div class="card-body text-center p-4 p-md-5">
+            <h2 class="h3 mb-3">Inicie sesión para ver la información</h2>
+            <p class="text-muted mb-4">Debe iniciar sesión o crear una cuenta para acceder al dashboard y a los módulos administrativos del gimnasio.</p>
+            <div class="d-flex flex-column flex-sm-row justify-content-center gap-2">
+                <a class="btn btn-primary px-4" asp-area="Identity" asp-page="/Account/Login">Iniciar sesión</a>
+                <a class="btn btn-outline-primary px-4" asp-area="Identity" asp-page="/Account/Register">Registrarse</a>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,10 @@
+@model Entrenador
+<div class="row g-3">
+    <div class="col-md-4"><label asp-for="Cedula" class="form-label"></label><input asp-for="Cedula" class="form-control" /><span asp-validation-for="Cedula"></span></div>
+    <div class="col-md-4"><label asp-for="Nombres" class="form-label"></label><input asp-for="Nombres" class="form-control" /><span asp-validation-for="Nombres"></span></div>
+    <div class="col-md-4"><label asp-for="Apellidos" class="form-label"></label><input asp-for="Apellidos" class="form-control" /><span asp-validation-for="Apellidos"></span></div>
+    <div class="col-md-6"><label asp-for="Especialidad" class="form-label"></label><input asp-for="Especialidad" class="form-control" /><span asp-validation-for="Especialidad"></span></div>
+    <div class="col-md-3"><label asp-for="Telefono" class="form-label"></label><input asp-for="Telefono" class="form-control" /><span asp-validation-for="Telefono"></span></div>
+    <div class="col-md-3"><label asp-for="Correo" class="form-label"></label><input asp-for="Correo" class="form-control" /><span asp-validation-for="Correo"></span></div>
+    <div class="col-12"><div class="form-check"><input asp-for="Activo" class="form-check-input" /><label asp-for="Activo" class="form-check-label"></label></div></div>
+</div>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Sistema de Gimnasio</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/SistemaGimnasio.Web.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark gym-navbar shadow-sm mb-4">
+            <div class="container-fluid px-lg-4">
+                <a class="navbar-brand fw-bold" asp-area="" asp-controller="Home" asp-action="Index">GymControl</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Abrir navegación">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">Inicio</a></li>
+
+                        @if (User.Identity?.IsAuthenticated == true)
+                        {
+                            <li class="nav-item"><a class="nav-link" asp-controller="Clientes" asp-action="Index">Clientes</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Entrenadores" asp-action="Index">Entrenadores</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="TiposMembresia" asp-action="Index">Planes</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Membresias" asp-action="Index">Membresías</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Pagos" asp-action="Index">Pagos</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Asistencias" asp-action="Index">Asistencias</a></li>
+                        }
+                    </ul>
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container pb-5">
+        <partial name="_Alerts" />
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted bg-white">
+        <div class="container py-3">
+            &copy; 2026 - Sistema de Gimnasio - Proyecto ASP.NET Core MVC .NET 9
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

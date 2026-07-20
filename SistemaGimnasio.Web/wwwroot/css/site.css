@@ -1,0 +1,31 @@
+html { font-size: 14px; }
+@media (min-width: 768px) { html { font-size: 16px; } }
+html { position: relative; min-height: 100%; }
+body { margin-bottom: 72px; background: #f5f7fa; color: #24313f; }
+.gym-navbar { background: #16324f; }
+.navbar-dark .navbar-nav .nav-link { color: rgba(255,255,255,.82); }
+.navbar-dark .navbar-nav .nav-link:hover { color: #fff; }
+.hero-panel { background: linear-gradient(120deg, #16324f, #246b74); color: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 .5rem 1rem rgba(0,0,0,.08); }
+.summary-card { background: white; border-left: 4px solid #246b74; border-radius: .75rem; padding: 1.25rem; box-shadow: 0 .25rem .75rem rgba(0,0,0,.06); height: 100%; }
+.summary-card span { display: block; color: #6c757d; margin-bottom: .4rem; }
+.summary-card strong { font-size: 2rem; color: #16324f; }
+.card { border: 0; border-radius: .85rem; }
+.card-header { background: white; border-bottom: 1px solid #e9ecef; padding: 1rem 1.25rem; }
+.table thead th { background: #eef3f7; color: #33475b; white-space: nowrap; }
+.table td { vertical-align: middle; }
+.form-label { font-weight: 600; }
+.field-validation-error, .validation-summary-errors { color: #b02a37; }
+.input-validation-error { border-color: #dc3545; }
+.footer { position: absolute; bottom: 0; width: 100%; line-height: 1.5; }
+.action-buttons { white-space: nowrap; }
+.details-list dt { color: #6c757d; }
+.btn-primary { background-color: #246b74; border-color: #246b74; }
+.btn-primary:hover { background-color: #1d5961; border-color: #1d5961; }
+.btn-outline-primary { color: #246b74; border-color: #246b74; }
+.btn-outline-primary:hover { background-color: #246b74; border-color: #246b74; }
+
+/* Mensaje mostrado cuando el visitante todavía no ha iniciado sesión. */
+.login-required-card {
+    max-width: 760px;
+    margin: 0 auto;
+}

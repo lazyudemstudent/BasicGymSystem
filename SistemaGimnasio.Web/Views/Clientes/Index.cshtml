@@ -1,0 +1,7 @@
+@model IEnumerable<Cliente>
+@{ ViewData["Title"] = "Clientes"; }
+<div class="card shadow-sm">
+<div class="card-header d-flex justify-content-between align-items-center"><div><h2 class="h4 mb-0">Clientes</h2><small class="text-muted">Gestión de clientes registrados</small></div><a asp-action="Create" class="btn btn-primary">Nuevo cliente</a></div>
+<div class="card-body"><div class="table-responsive"><table class="table table-striped table-hover"><thead><tr><th>Cédula</th><th>Nombre</th><th>Teléfono</th><th>Entrenador</th><th>Registro</th><th>Estado</th><th></th></tr></thead><tbody>
+@foreach (var item in Model) { <tr><td>@item.Cedula</td><td>@item.NombreCompleto</td><td>@item.Telefono</td><td>@(item.Entrenador?.NombreCompleto ?? "Sin asignar")</td><td>@item.FechaRegistro.ToString("dd/MM/yyyy")</td><td><span class="badge @(item.Activo ? "bg-success" : "bg-secondary")">@(item.Activo ? "Activo" : "Inactivo")</span></td><td class="action-buttons text-end"><a asp-action="Details" asp-route-id="@item.ClienteId" class="btn btn-sm btn-outline-secondary">Detalles</a> <a asp-action="Edit" asp-route-id="@item.ClienteId" class="btn btn-sm btn-outline-primary">Editar</a> <a asp-action="Delete" asp-route-id="@item.ClienteId" class="btn btn-sm btn-outline-danger">Eliminar</a></td></tr> }
+</tbody></table></div>@if (!Model.Any()) { <div class="text-center text-muted py-4">No hay clientes registrados.</div> }</div></div>

@@ -1,0 +1,3 @@
+@model Cliente
+@{ ViewData["Title"] = "Eliminar cliente"; }
+<div class="card shadow-sm border-danger"><div class="card-header"><h2 class="h4 mb-0 text-danger">Eliminar cliente</h2></div><div class="card-body"><p>¿Está seguro de eliminar a <strong>@Model.NombreCompleto</strong>?</p><p class="text-muted">No podrá eliminarse si tiene membresías o asistencias registradas.</p><form asp-action="Delete" method="post"><input type="hidden" asp-for="ClienteId" /><button type="submit" class="btn btn-danger">Eliminar</button> <a asp-action="Index" class="btn btn-outline-secondary">Cancelar</a></form></div></div>

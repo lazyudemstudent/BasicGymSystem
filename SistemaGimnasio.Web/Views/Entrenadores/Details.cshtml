@@ -1,0 +1,6 @@
+@model Entrenador
+@{ ViewData["Title"] = "Detalle del entrenador"; }
+<div class="card shadow-sm"><div class="card-header"><h2 class="h4 mb-0">Detalle del entrenador</h2></div><div class="card-body">
+<dl class="row details-list"><dt class="col-sm-3">Cédula</dt><dd class="col-sm-9">@Model.Cedula</dd><dt class="col-sm-3">Nombre completo</dt><dd class="col-sm-9">@Model.NombreCompleto</dd><dt class="col-sm-3">Especialidad</dt><dd class="col-sm-9">@Model.Especialidad</dd><dt class="col-sm-3">Teléfono</dt><dd class="col-sm-9">@Model.Telefono</dd><dt class="col-sm-3">Correo</dt><dd class="col-sm-9">@Model.Correo</dd><dt class="col-sm-3">Estado</dt><dd class="col-sm-9">@(Model.Activo ? "Activo" : "Inactivo")</dd><dt class="col-sm-3">Clientes asignados</dt><dd class="col-sm-9">@Model.Clientes.Count</dd></dl>
+<a asp-action="Edit" asp-route-id="@Model.EntrenadorId" class="btn btn-primary">Editar</a> <a asp-action="Index" class="btn btn-outline-secondary">Volver</a>
+</div></div>
