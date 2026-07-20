@@ -67,5 +67,5 @@ Remove-Migration -Project SistemaGimnasio.Data -StartupProject SistemaGimnasio.W
 La cadena se encuentra en `SistemaGimnasio.Web/appsettings.json`:
 
 ```text
-Server=MARIODEVIT;Database=SistemaGimnasioDB;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True
+Server=(localdb)\MSSQLLocalDB;Database=SistemaGimnasioDB;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True
 ```
